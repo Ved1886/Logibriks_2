@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact Us | Logibrisk — Get in Touch</title>
+    <meta content="Reach out to Logibrisk for demos, partnerships, and custom logistics solutions. We respond within 24 hours." name="description">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e1e2e8",
+                        "inverse-surface": "#2e3135",
+                        "surface-dim": "#d8dae0",
+                        "on-surface-variant": "#40484f",
+                        "surface-glass": "rgba(255, 255, 255, 0.7)",
+                        "on-tertiary-container": "#cdf7ff",
+                        "on-background": "#191c20",
+                        "on-primary-container": "#e4f1ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#cbe6ff",
+                        "on-surface": "#191c20",
+                        "secondary-fixed-dim": "#b0c8eb",
+                        "data-success": "#10B981",
+                        "surface-container-high": "#e7e8ee",
+                        "on-secondary-container": "#49617f",
+                        "tertiary-fixed": "#9cf0ff",
+                        "tertiary-container": "#007886",
+                        "on-error": "#ffffff",
+                        "outline": "#707880",
+                        "tertiary": "#005d69",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "primary": "#005986",
+                        "surface-container": "#eceef3",
+                        "on-tertiary-fixed": "#001f24",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#314865",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "surface-variant": "#e1e2e8",
+                        "primary-container": "#0073aa",
+                        "logi-vibrant-highlight": "#00E5FF",
+                        "secondary-fixed": "#d2e4ff",
+                        "on-primary-fixed-variant": "#004b71",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#8fcdff",
+                        "on-secondary-fixed": "#001c37",
+                        "secondary-container": "#c4dcff",
+                        "inverse-on-surface": "#eff0f6",
+                        "data-warning": "#F59E0B",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "logi-deep-navy": "#0A2540",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#8fcdff",
+                        "surface-container-low": "#f2f3f9"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-data": ["JetBrains Mono"],
+                        "label-caps": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }]
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ─── Contact Page Specific Styles ─── */
+        .contact-hero-gradient {
+            background: linear-gradient(135deg, #0A2540 0%, #0d3a5c 40%, #0A2540 70%, #061828 100%);
+        }
+
+        /* Animated orbiting rings */
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(0, 229, 255, 0.08);
+            border-radius: 50%;
+            animation: orbitSpin 30s linear infinite;
+        }
+        .orbit-ring:nth-child(2) { animation-duration: 45s; animation-direction: reverse; }
+        .orbit-ring:nth-child(3) { animation-duration: 60s; }
+
+        @keyframes orbitSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Glowing node dots on rings */
+        .orbit-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00E5FF;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #00E5FF, 0 0 24px rgba(0, 229, 255, 0.3);
+        }
+
+        /* Staggered card entrance */
+        .contact-card-enter {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: cardSlideUp 0.7s ease-out forwards;
+        }
+        .contact-card-enter:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card-enter:nth-child(2) { animation-delay: 0.25s; }
+        .contact-card-enter:nth-child(3) { animation-delay: 0.4s; }
+        .contact-card-enter:nth-child(4) { animation-delay: 0.55s; }
+
+        @keyframes cardSlideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glowing input focus ring */
+        .glow-input {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-input:focus {
+            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.08);
+            border-color: #00E5FF;
+        }
+
+        /* Particle dots floating background */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 229, 255, 0.3);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(40px); opacity: 0; }
+        }
+
+        /* Map pin pulse */
+        .map-pin-pulse {
+            animation: pinPulse 2s ease-in-out infinite;
+        }
+        @keyframes pinPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(0, 229, 255, 0); }
+        }
+
+        /* FAQ accordion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-top: 0.75rem;
+        }
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Breadcrumb separator */
+        .breadcrumb-sep::after {
+            content: '/';
+            margin: 0 0.5rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden antialiased">
+    <!-- TopNavBar (same as index.html) -->
+    <nav
+        class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface-glass border-b border-white/20 shadow-[0_4px_20px_-2px_rgba(0,115,170,0.1)] h-20">
+        <div class="container-custom flex justify-between items-center h-full">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="bg-white/95 px-3 py-1.5 rounded-xl border border-white/40 shadow-sm flex items-center justify-center">
+                    <img alt="Logibrisk Logo" class="h-8 w-auto object-contain"
+                        src="logo.png">
+                </a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 h-full">
+                <!-- LogiVite -->
+                <a class="font-body-md text-secondary hover:text-primary transition-colors duration-200 py-6"
+                    href="#">LogiVite</a>
+                
+                <!-- Company Dropdown Wrapper -->
+                <div class="relative group py-6 h-full flex items-center">
+                    <a class="font-body-md text-secondary hover:text-primary transition-colors duration-200 flex items-center gap-0.5 cursor-pointer"
+                        href="#">Company <span class="material-symbols-outlined text-base leading-none group-hover:rotate-180 transition-transform duration-300">expand_more</span></a>
+                    
+                    <!-- Company Dropdown Card -->
+                    <div class="absolute top-[80px] left-1/2 -translate-x-[40%] mt-0 w-[650px] bg-white rounded-2xl border border-outline/10 shadow-2xl p-5 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 flex gap-5">
+                        <!-- Left Panel (Sidebar Card) -->
+                        <div class="w-1/3 bg-gradient-to-br from-primary to-[#6F7BF7] text-white p-4 rounded-xl flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="material-symbols-outlined text-2xl bg-white/20 p-1.5 rounded-lg">auto_awesome</span>
+                                <h4 class="font-headline-md text-sm font-bold">Our Vision</h4>
+                                <p class="text-[10px] text-white/80 leading-relaxed">Precision at scale. Transforming supply chains worldwide with high-precision TMS solutions.</p>
+                            </div>
+                            <a href="#" class="text-[10px] font-bold underline hover:text-logi-vibrant-highlight transition-colors mt-2">Learn Our Story →</a>
+                        </div>
+                        <!-- Right Panel (Links Grid) -->
+                        <div class="w-2/3 grid grid-cols-2 gap-x-4 gap-y-3">
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">favorite</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Our Culture</h5>
+                                    <p class="text-[9px] text-secondary">Our shared values and workspace</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">groups</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Our People</h5>
+                                    <p class="text-[9px] text-secondary">Meet the leadership and engineers</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">visibility</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Our Vision</h5>
+                                    <p class="text-[9px] text-secondary">Leading tomorrow's logistics</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">history</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Our Story</h5>
+                                    <p class="text-[9px] text-secondary">Logibrisk origins and milestones</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">track_changes</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Our Mission</h5>
+                                    <p class="text-[9px] text-secondary">Delivering seamless operations</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">help_center</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">FAQ's</h5>
+                                    <p class="text-[9px] text-secondary">Got questions? We have answers</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">chat</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Testimonials</h5>
+                                    <p class="text-[9px] text-secondary">What our clients say about us</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start gap-2.5 p-1.5 rounded-lg hover:bg-surface-container/40 transition-all group/item">
+                                <span class="material-symbols-outlined text-primary text-base mt-0.5 bg-primary-container/10 p-1.5 rounded group-hover/item:bg-primary group-hover/item:text-white transition-colors">article</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-logi-deep-navy">Blog</h5>
+                                    <p class="text-[9px] text-secondary">Logistics updates and insights</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Our Services Dropdown Wrapper -->
+                <div class="relative group py-6 h-full flex items-center">
+                    <a class="font-body-md text-secondary hover:text-primary transition-colors duration-200 flex items-center gap-0.5 cursor-pointer"
+                        href="#">Our Services <span class="material-symbols-outlined text-base leading-none group-hover:rotate-180 transition-transform duration-300">expand_more</span></a>
+                    
+                    <!-- Our Services Dropdown Card -->
+                    <div class="absolute top-[80px] left-1/2 -translate-x-[50%] mt-0 w-[840px] bg-white rounded-2xl border border-outline/10 shadow-2xl p-5 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 flex gap-5">
+                        <!-- Left Panel (Category tabs column) -->
+                        <div class="w-1/4 border-r border-outline/10 pr-4 space-y-2">
+                            <h4 class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-3">Service Categories</h4>
+                            <div class="flex items-center gap-2 p-2 rounded-lg bg-primary/5 text-primary text-xs font-bold cursor-pointer">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                Operations Suite
+                            </div>
+                            <div class="flex items-center gap-2 p-2 rounded-lg hover:bg-surface-container/50 text-secondary hover:text-primary text-xs font-medium cursor-pointer transition-colors">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                                Financial Modules
+                            </div>
+                            <div class="flex items-center gap-2 p-2 rounded-lg hover:bg-surface-container/50 text-secondary hover:text-primary text-xs font-medium cursor-pointer transition-colors">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                                Integrations Hub
+                            </div>
+                        </div>
+                        <!-- Right Panel (Services List Grid) -->
+                        <div class="w-3/4 grid grid-cols-2 gap-x-4 gap-y-2 max-h-[350px] overflow-y-auto pr-1">
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">local_shipping</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Fleet Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">speed</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Express Cargo Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">gavel</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Auction Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">height</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">ODC Movements Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">local_mall</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">E-commerce Delivery Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">receipt_long</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Billing &amp; Accounts Management System</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">near_me</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Last Mile Delivery Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">shopping_bag</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">E-commerce Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">open_in_full</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Full Truckload Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">rv_hookup</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">Part Truckload Management Software</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-surface-container/50 transition-all group/item">
+                                <span class="material-symbols-outlined text-[#6F7BF7] text-lg bg-[#6F7BF7]/10 p-1.5 rounded-md group-hover/item:bg-[#6F7BF7] group-hover/item:text-white transition-colors">gavel</span>
+                                <span class="text-xs font-semibold text-logi-deep-navy group-hover/item:text-primary transition-colors">GST &amp; E-way Bill Enabled Logistics System</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Our Products Dropdown Wrapper -->
+                <div class="relative group py-6 h-full flex items-center">
+                    <a class="font-body-md text-secondary hover:text-primary transition-colors duration-200 flex items-center gap-0.5 cursor-pointer"
+                        href="#">Our Products <span class="material-symbols-outlined text-base leading-none group-hover:rotate-180 transition-transform duration-300">expand_more</span></a>
+                    
+                    <!-- Our Products Dropdown Card -->
+                    <div class="absolute top-[80px] left-1/2 -translate-x-[60%] mt-0 w-[840px] bg-white rounded-2xl border border-outline/10 shadow-2xl p-5 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 grid grid-cols-3 gap-4">
+                        <!-- Category Column 1 -->
+                        <div class="bg-primary/[0.02] border border-primary/5 p-4 rounded-xl space-y-3 hover:bg-primary/[0.04] transition-colors">
+                            <div class="flex items-center gap-2 pb-2 border-b border-primary/10">
+                                <span class="material-symbols-outlined text-primary text-xl bg-primary-container/20 p-1.5 rounded-md">route</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-logi-deep-navy">Smart Transport</h4>
+                                    <p class="text-[9px] text-secondary">End-to-end movement</p>
+                                </div>
+                            </div>
+                            <nav class="flex flex-col gap-1.5">
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart FTL Management System</a>
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart PTL Management System</a>
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart Last Mile Delivery System</a>
+                            </nav>
+                        </div>
+                        <!-- Category Column 2 -->
+                        <div class="bg-primary/[0.02] border border-primary/5 p-4 rounded-xl space-y-3 hover:bg-primary/[0.04] transition-colors">
+                            <div class="flex items-center gap-2 pb-2 border-b border-primary/10">
+                                <span class="material-symbols-outlined text-primary text-xl bg-primary-container/20 p-1.5 rounded-md">gavel</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-logi-deep-navy">Smart Bidding</h4>
+                                    <p class="text-[9px] text-secondary">Auctions &amp; procurement</p>
+                                </div>
+                            </div>
+                            <nav class="flex flex-col gap-1.5">
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart Fleet Management System</a>
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart Auction Management System</a>
+                            </nav>
+                        </div>
+                        <!-- Category Column 3 -->
+                        <div class="bg-primary/[0.02] border border-primary/5 p-4 rounded-xl space-y-3 hover:bg-primary/[0.04] transition-colors">
+                            <div class="flex items-center gap-2 pb-2 border-b border-primary/10">
+                                <span class="material-symbols-outlined text-primary text-xl bg-primary-container/20 p-1.5 rounded-md">receipt_long</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-logi-deep-navy">Smart Accounting</h4>
+                                    <p class="text-[9px] text-secondary">Billing &amp; finances</p>
+                                </div>
+                            </div>
+                            <nav class="flex flex-col gap-1.5">
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart Billing Management System</a>
+                                <a href="#" class="text-xs font-medium text-secondary hover:text-primary hover:underline transition-all">Smart Accounting Management System</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-2.5 rounded-xl font-headline-md bg-[#6F7BF7] text-white shadow-lg hover:bg-[#5E6AE6] hover:shadow-indigo-500/20 transition-all active:scale-95 text-sm font-semibold inline-block">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- HERO SECTION — Immersive dark with orbiting rings -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="contact-hero-gradient relative min-h-[38vh] flex items-center overflow-hidden">
+            <!-- Orbiting decorative rings -->
+            <div class="orbit-ring w-[500px] h-[500px] absolute -top-40 -right-40 opacity-50">
+                <div class="orbit-dot" style="top:0; left:50%;"></div>
+            </div>
+            <div class="orbit-ring w-[700px] h-[700px] absolute -top-60 -right-60 opacity-30">
+                <div class="orbit-dot" style="top:50%; right:0;"></div>
+            </div>
+            <div class="orbit-ring w-[350px] h-[350px] absolute bottom-10 left-10 opacity-40">
+                <div class="orbit-dot" style="bottom:0; left:50%;"></div>
+            </div>
+
+            <!-- Floating particles -->
+            <div class="particle" style="left:10%; animation-duration:8s; animation-delay:0s;"></div>
+            <div class="particle" style="left:25%; animation-duration:12s; animation-delay:2s;"></div>
+            <div class="particle" style="left:45%; animation-duration:10s; animation-delay:4s;"></div>
+            <div class="particle" style="left:65%; animation-duration:9s; animation-delay:1s;"></div>
+            <div class="particle" style="left:80%; animation-duration:11s; animation-delay:3s;"></div>
+            <div class="particle" style="left:90%; animation-duration:7s; animation-delay:5s;"></div>
+            <div class="particle" style="left:35%; animation-duration:13s; animation-delay:6s;"></div>
+            <div class="particle" style="left:55%; animation-duration:8s; animation-delay:7s;"></div>
+
+            <!-- Radial glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="container-custom relative z-10 pt-10 pb-8 md:pt-14 md:pb-10">
+
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-logi-vibrant-highlight font-label-caps text-[10px] md:text-xs mb-5 animate-float">
+                        <span class="w-2 h-2 rounded-full bg-logi-vibrant-highlight animate-pulse"></span>
+                        Available 24/7
+                    </div>
+                    <h1 class="font-headline-lg text-3xl md:text-5xl lg:text-[56px] text-white font-extrabold leading-[1.1] tracking-tight mb-5">
+                        Let's Build <br class="hidden md:block">
+                        <span class="bg-gradient-to-r from-logi-vibrant-highlight via-[#6F7BF7] to-logi-vibrant-highlight bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">Something Great</span>
+                    </h1>
+                    <p class="text-surface-variant text-sm md:text-base leading-relaxed max-w-lg opacity-90">
+                        Whether you need a demo, have a question, or want to explore a partnership — our team is ready to help you transform your logistics operations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Curved bottom edge -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-[50px] md:h-[80px]">
+                    <path d="M0,80 L0,30 Q720,80 1440,30 L1440,80 Z" fill="#f8f9ff"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- CONTACT CARDS — 4 iconic info tiles -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="relative -mt-4 md:-mt-6 z-10 pb-16">
+            <div class="container-custom">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Office -->
+                    <div class="contact-card-enter group bg-white rounded-2xl p-6 shadow-lg shadow-primary/5 border-2 border-primary/10 hover:border-[#6F7BF7]/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-400">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-[#6F7BF7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md shadow-primary/20">
+                            <span class="material-symbols-outlined text-white text-xl">apartment</span>
+                        </div>
+                        <h3 class="font-headline-md text-base text-logi-deep-navy font-bold mb-1">Visit Our Office</h3>
+                        <p class="text-secondary text-xs leading-relaxed">225-226, Silver Trade Center, Uttran, Surat – 394101, Gujarat</p>
+                    </div>
+                    <!-- Phone -->
+                    <div class="contact-card-enter group bg-white rounded-2xl p-6 shadow-lg shadow-primary/5 border-2 border-primary/10 hover:border-[#6F7BF7]/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-400">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-logi-vibrant-highlight to-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md shadow-logi-vibrant-highlight/20">
+                            <span class="material-symbols-outlined text-white text-xl">call</span>
+                        </div>
+                        <h3 class="font-headline-md text-base text-logi-deep-navy font-bold mb-1">Call Us</h3>
+                        <p class="text-logi-vibrant-highlight font-bold text-sm">+91 98244 79555</p>
+                        <p class="text-secondary text-[10px] mt-0.5">Mon – Sat, 9 AM – 7 PM IST</p>
+                    </div>
+                    <!-- Email -->
+                    <div class="contact-card-enter group bg-white rounded-2xl p-6 shadow-lg shadow-primary/5 border-2 border-primary/10 hover:border-[#6F7BF7]/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-400">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6F7BF7] to-logi-vibrant-highlight flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md shadow-[#6F7BF7]/20">
+                            <span class="material-symbols-outlined text-white text-xl">mail</span>
+                        </div>
+                        <h3 class="font-headline-md text-base text-logi-deep-navy font-bold mb-1">Email Us</h3>
+                        <p class="text-primary font-bold text-sm">info@logibrisk.com</p>
+                        <p class="text-secondary text-[10px] mt-0.5">We respond within 24 hours</p>
+                    </div>
+                    <!-- Demo -->
+                    <div class="js-schedule-demo cursor-pointer contact-card-enter group bg-white rounded-2xl p-6 shadow-lg shadow-primary/5 border-2 border-primary/10 hover:border-[#6F7BF7]/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-400">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-logi-vibrant-highlight flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md shadow-primary/20">
+                            <span class="material-symbols-outlined text-white text-xl">play_circle</span>
+                        </div>
+                        <h3 class="font-headline-md text-base text-logi-deep-navy font-bold mb-1">Schedule Demo</h3>
+                        <p class="text-secondary text-xs leading-relaxed">Book a free 30-min walkthrough of our TMS platform</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- MAIN FORM + MAP SECTION -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="py-16 md:py-20 bg-surface-container-low">
+            <div class="container-custom">
+                <div class="grid lg:grid-cols-5 gap-10 md:gap-14">
+                    <!-- Contact Form (3 cols) -->
+                    <div class="lg:col-span-3">
+                        <div class="mb-8 space-y-2">
+                            <h2 class="font-headline-lg text-2xl md:text-3xl text-logi-deep-navy font-bold">Send Us a <span class="bg-gradient-to-r from-primary via-[#6F7BF7] to-logi-vibrant-highlight bg-clip-text text-transparent">Message</span></h2>
+                            <p class="text-secondary text-sm leading-relaxed max-w-lg">Fill out the form below and our logistics experts will get in touch with you to discuss your requirements.</p>
+                        </div>
+                        <form class="space-y-5" id="contact-page-form" onsubmit="return false;">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">Full Name <span class="text-error">*</span></label>
+                                    <input type="text" placeholder="John Doe" required
+                                        class="glow-input w-full px-4 py-3 bg-white border-2 border-outline/15 rounded-xl text-sm font-body-md text-logi-deep-navy placeholder:text-secondary/50 focus:outline-none transition-all"
+                                        id="cp-name">
+                                </div>
+                                <div>
+                                    <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">Company Name</label>
+                                    <input type="text" placeholder="Acme Logistics Pvt. Ltd."
+                                        class="glow-input w-full px-4 py-3 bg-white border-2 border-outline/15 rounded-xl text-sm font-body-md text-logi-deep-navy placeholder:text-secondary/50 focus:outline-none transition-all"
+                                        id="cp-company">
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">Email Address <span class="text-error">*</span></label>
+                                    <input type="email" placeholder="john@acme.com" required
+                                        class="glow-input w-full px-4 py-3 bg-white border-2 border-outline/15 rounded-xl text-sm font-body-md text-logi-deep-navy placeholder:text-secondary/50 focus:outline-none transition-all"
+                                        id="cp-email">
+                                </div>
+                                <div>
+                                    <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">Phone Number <span class="text-error">*</span></label>
+                                    <input type="tel" placeholder="+91 98765 43210" required
+                                        class="glow-input w-full px-4 py-3 bg-white border-2 border-outline/15 rounded-xl text-sm font-body-md text-logi-deep-navy placeholder:text-secondary/50 focus:outline-none transition-all"
+                                        id="cp-phone">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">What are you interested in?</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" class="hidden peer" value="TMS Demo">
+                                        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold border-2 border-outline/15 text-secondary peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary/40">TMS Demo</span>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" class="hidden peer" value="Partnership">
+                                        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold border-2 border-outline/15 text-secondary peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary/40">Partnership</span>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" class="hidden peer" value="Custom Solution">
+                                        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold border-2 border-outline/15 text-secondary peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary/40">Custom Solution</span>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" class="hidden peer" value="Technical Support">
+                                        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold border-2 border-outline/15 text-secondary peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary/40">Technical Support</span>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" class="hidden peer" value="Pricing">
+                                        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold border-2 border-outline/15 text-secondary peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary/40">Pricing</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-logi-deep-navy text-xs font-bold mb-2 uppercase tracking-wider">Your Message</label>
+                                <textarea placeholder="Tell us about your logistics challenges, fleet size, and what you'd like to achieve…" rows="5"
+                                    class="glow-input w-full px-4 py-3 bg-white border-2 border-outline/15 rounded-xl text-sm font-body-md text-logi-deep-navy placeholder:text-secondary/50 focus:outline-none transition-all resize-none"
+                                    id="cp-message"></textarea>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                <button type="submit" id="cp-submit-btn"
+                                    class="px-10 py-3.5 rounded-xl bg-gradient-to-r from-primary via-[#6F7BF7] to-logi-vibrant-highlight text-white font-bold text-sm shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all active:scale-95 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-lg">send</span>
+                                    Send Message
+                                </button>
+                                <p class="text-secondary text-[10px] leading-relaxed">By submitting, you agree to our <a href="#" class="text-primary underline hover:text-[#6F7BF7]">Privacy Policy</a>.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Map + Quick Links (2 cols) -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Embedded Map -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg border border-outline/10 relative group">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.6953!2d72.8197!3d21.1702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzEyLjciTiA3MsKwNDknMTAuOSJF!5e0!3m2!1sen!2sin!4v1" 
+                                width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
+                            <!-- Map pin overlay -->
+                            <div class="absolute top-4 left-4 map-pin-pulse bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg flex items-center gap-2 pointer-events-none">
+                                <span class="material-symbols-outlined text-primary text-base">location_on</span>
+                                <span class="text-[10px] font-bold text-logi-deep-navy">Logibrisk HQ</span>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours Card -->
+                        <div class="bg-white rounded-2xl p-5 shadow-lg border border-outline/5">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-lg">schedule</span>
+                                Business Hours
+                            </h4>
+                            <div class="space-y-2.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-secondary text-xs">Monday – Friday</span>
+                                    <span class="text-logi-deep-navy text-xs font-bold bg-data-success/10 text-data-success px-2.5 py-0.5 rounded-full">9:00 AM – 7:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-secondary text-xs">Saturday</span>
+                                    <span class="text-logi-deep-navy text-xs font-bold bg-data-warning/10 text-data-warning px-2.5 py-0.5 rounded-full">10:00 AM – 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-secondary text-xs">Sunday</span>
+                                    <span class="text-xs font-bold bg-error/10 text-error px-2.5 py-0.5 rounded-full">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="bg-white rounded-2xl p-5 shadow-lg border border-outline/5">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-lg">share</span>
+                                Follow Us
+                            </h4>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-white text-primary transition-all group">
+                                    <span class="material-symbols-outlined text-lg">share</span>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-[#0077B5] hover:text-white text-primary transition-all group">
+                                    <span class="material-symbols-outlined text-lg">work</span>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white text-primary transition-all group">
+                                    <span class="material-symbols-outlined text-lg">tag</span>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white text-primary transition-all group">
+                                    <span class="material-symbols-outlined text-lg">play_arrow</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECURE YOUR LOGISTICS SECTION -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="py-16 md:py-20 bg-white relative overflow-hidden">
+            <div class="container-custom relative z-10">
+                <div class="text-center mb-10 md:mb-12 space-y-2">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-logi-deep-navy font-bold">Secure Your Logistics with <span class="bg-gradient-to-r from-primary to-[#6F7BF7] bg-clip-text text-transparent">Logibrisk</span></h2>
+                    <p class="text-secondary text-sm md:text-base max-w-2xl mx-auto leading-relaxed opacity-85">Smarter Shipping, Real-Time Tracking, And Cost-Efficient Logistics—All In One Platform.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-surface-container-low/85 p-6 rounded-2xl flex flex-col justify-between min-h-[180px] border border-outline/5 shadow-sm hover:shadow-md transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-white text-primary flex items-center justify-center mb-4 shadow-sm">
+                                <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1">desktop_windows</span>
+                            </div>
+                            <h4 class="font-headline-md text-base md:text-lg text-logi-deep-navy font-bold mb-1.5">Hassle Free Online Booking</h4>
+                            <p class="text-secondary text-xs md:text-sm leading-relaxed">Book shipments quickly without manual hassle.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-surface-container-low/85 p-6 rounded-2xl flex flex-col justify-between min-h-[180px] border border-outline/5 shadow-sm hover:shadow-md transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-white text-primary flex items-center justify-center mb-4 shadow-sm">
+                                <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1">local_shipping</span>
+                            </div>
+                            <h4 class="font-headline-md text-base md:text-lg text-logi-deep-navy font-bold mb-1.5">Live Tracking</h4>
+                            <p class="text-secondary text-xs md:text-sm leading-relaxed">Get real-time updates and full shipment visibility.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-surface-container-low/85 p-6 rounded-2xl flex flex-col justify-between min-h-[180px] border border-outline/5 shadow-sm hover:shadow-md transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-white text-primary flex items-center justify-center mb-4 shadow-sm">
+                                <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1">assignment</span>
+                            </div>
+                            <h4 class="font-headline-md text-base md:text-lg text-logi-deep-navy font-bold mb-1.5">Flexible Shipping</h4>
+                            <p class="text-secondary text-xs md:text-sm leading-relaxed">Choose the best transport option for every delivery.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-surface-container-low/85 p-6 rounded-2xl flex flex-col justify-between min-h-[180px] border border-outline/5 shadow-sm hover:shadow-md transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-white text-primary flex items-center justify-center mb-4 shadow-sm">
+                                <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1">payments</span>
+                            </div>
+                            <h4 class="font-headline-md text-base md:text-lg text-logi-deep-navy font-bold mb-1.5">Cost Efficiency</h4>
+                            <p class="text-secondary text-xs md:text-sm leading-relaxed">Reduce costs with smarter routing and planning.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Action Button -->
+                <div class="flex justify-center pt-10">
+                    <button class="js-schedule-demo px-8 py-3 bg-primary text-white font-bold text-sm rounded-xl hover:bg-[#004b71] hover:-translate-y-0.5 hover:shadow-lg transition-all active:scale-95 shadow-md">Schedule Demo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- FAQ SECTION — Accordion -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="py-16 md:py-20">
+            <div class="container-custom max-w-3xl">
+                <div class="text-center mb-10 space-y-2">
+                    <h3 class="font-label-caps text-primary uppercase tracking-widest text-xs font-bold">FAQ</h3>
+                    <h2 class="font-headline-lg text-2xl md:text-3xl text-logi-deep-navy font-bold">Frequently Asked <span class="bg-gradient-to-r from-primary to-[#6F7BF7] bg-clip-text text-transparent">Questions</span></h2>
+                </div>
+                <div class="space-y-3" id="faq-container">
+                    <div class="faq-item bg-white rounded-xl border border-outline/10 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center px-5 py-4">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold pr-4">How long does it take to set up the TMS?</h4>
+                            <span class="material-symbols-outlined text-primary faq-chevron flex-shrink-0">expand_more</span>
+                        </div>
+                        <div class="faq-answer px-5 pb-4">
+                            <p class="text-secondary text-xs leading-relaxed">Our team can typically onboard your fleet and configure the TMS within 2–4 weeks, depending on fleet size and integrations required. We provide dedicated onboarding managers to ensure a smooth transition.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-xl border border-outline/10 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center px-5 py-4">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold pr-4">Do you offer a free trial or demo?</h4>
+                            <span class="material-symbols-outlined text-primary faq-chevron flex-shrink-0">expand_more</span>
+                        </div>
+                        <div class="faq-answer px-5 pb-4">
+                            <p class="text-secondary text-xs leading-relaxed">Yes! We offer a free 30-minute live demo where our product specialist walks you through every module. No credit card required to get started.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-xl border border-outline/10 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center px-5 py-4">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold pr-4">What industries does Logibrisk serve?</h4>
+                            <span class="material-symbols-outlined text-primary faq-chevron flex-shrink-0">expand_more</span>
+                        </div>
+                        <div class="faq-answer px-5 pb-4">
+                            <p class="text-secondary text-xs leading-relaxed">We serve 3PL providers, cold chain, broker dispatch, e-commerce, construction, manufacturing, taxi & mobility, express cargo, and full/part truckload transport industries.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-xl border border-outline/10 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center px-5 py-4">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold pr-4">Is my data secure with Logibrisk?</h4>
+                            <span class="material-symbols-outlined text-primary faq-chevron flex-shrink-0">expand_more</span>
+                        </div>
+                        <div class="faq-answer px-5 pb-4">
+                            <p class="text-secondary text-xs leading-relaxed">Absolutely. We use enterprise-grade encryption (AES-256), regular security audits, and comply with data protection regulations. Your data is hosted on secure cloud infrastructure with 99.9% uptime SLA.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-xl border border-outline/10 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center px-5 py-4">
+                            <h4 class="font-headline-md text-sm text-logi-deep-navy font-bold pr-4">Can Logibrisk integrate with my existing systems?</h4>
+                            <span class="material-symbols-outlined text-primary faq-chevron flex-shrink-0">expand_more</span>
+                        </div>
+                        <div class="faq-answer px-5 pb-4">
+                            <p class="text-secondary text-xs leading-relaxed">Yes. Logibrisk supports 50+ GPS hardware providers and offers REST APIs for seamless integration with ERPs (SAP, Tally), e-commerce platforms (Shopify, WooCommerce), and custom applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- CTA & FOOTER SECTION (synchronized with index.html) -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between bg-logi-deep-navy text-on-primary overflow-hidden pt-8 w-full">
+            <!-- CTA Section -->
+            <div class="container-custom w-full flex-grow flex items-center justify-center py-4">
+                <div
+                    class="w-full bg-gradient-to-br from-logi-deep-navy via-[#113156] to-primary rounded-2xl md:rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-2xl border border-white/5">
+                    <!-- Glowing decorative orbs -->
+                    <div class="absolute top-0 left-1/4 w-72 h-72 bg-logi-vibrant-highlight/10 rounded-full blur-[80px] pointer-events-none"></div>
+                    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-[#6F7BF7]/10 rounded-full blur-[80px] pointer-events-none"></div>
+                    
+                    <div class="absolute -top-12 -right-12 opacity-[0.07] text-logi-vibrant-highlight animate-[spin_80s_linear_infinite] select-none pointer-events-none">
+                        <span class="material-symbols-outlined text-[300px]">auto_awesome</span>
+                    </div>
+                    <div class="space-y-3 relative z-10 max-w-2xl text-center md:text-left">
+                        <h2 class="font-display-lg text-2xl md:text-4xl text-white leading-tight font-bold">Ready to
+                            <span class="bg-gradient-to-r from-logi-vibrant-highlight to-[#6F7BF7] bg-clip-text text-transparent">Transform</span> Your Logistics?</h2>
+                        <p class="text-primary-fixed/90 text-sm md:text-base leading-relaxed">Stop managing on
+                            spreadsheets. Join 500+ global enterprises who have reclaimed their margins with Logibrisk's
+                            intelligent TMS.</p>
+                    </div>
+                    <div class="relative z-10 flex-shrink-0">
+                        <button
+                            class="js-schedule-demo relative overflow-hidden px-8 py-3.5 bg-white text-primary hover:text-white font-extrabold text-base md:text-lg rounded-xl hover:shadow-[0_10px_35px_rgba(0,229,255,0.4)] hover:bg-gradient-to-r hover:from-logi-vibrant-highlight hover:to-[#6F7BF7] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-xl border border-white/20">Request
+                            Demo</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="w-full border-t border-white/10 pt-8 pb-6 bg-logi-deep-navy/80">
+                <div class="container-custom">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-6 mb-8">
+                        <div class="md:col-span-2 space-y-4">
+                            <img alt="Logibrisk Logo" class="h-10 w-auto object-contain mb-4 mix-blend-screen bg-transparent"
+                                src="logo.png">
+                            <p class="text-surface-variant opacity-80 text-sm max-w-xs leading-relaxed">
+                                Logibrisk was established in 2022 with a mission to provide innovative solutions to
+                                transportation and logistics services globally.
+                            </p>
+                            <div class="flex gap-4">
+                                <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-logi-vibrant-highlight hover:text-logi-deep-navy transition-all"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-xl">share</span>
+                                </a>
+                                <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-logi-vibrant-highlight hover:text-logi-deep-navy transition-all"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-xl">mail</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <h6 class="font-label-caps text-white text-xs font-bold uppercase tracking-widest">Our Services</h6>
+                            <nav class="flex flex-col gap-2">
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Fleet Management</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Express Cargo</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Auction System</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Billing &amp; Accounts</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm" href="#">Last
+                                    Mile Delivery</a>
+                            </nav>
+                        </div>
+                        <div class="space-y-3">
+                            <h6 class="font-label-caps text-white text-xs font-bold uppercase tracking-widest">Products</h6>
+                            <nav class="flex flex-col gap-2">
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Smart FTL System</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Smart PTL System</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Smart Fleet Soft</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Smart Billing Hub</a>
+                            </nav>
+                        </div>
+                        <div class="space-y-3">
+                            <h6 class="font-label-caps text-white text-xs font-bold uppercase tracking-widest">Company</h6>
+                            <nav class="flex flex-col gap-2">
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">About Us</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm" href="#">Our
+                                    People</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Testimonials</a>
+                                <a class="text-surface-variant opacity-80 hover:text-white transition-all text-xs md:text-sm"
+                                    href="#">Privacy Policy</a>
+                            </nav>
+                        </div>
+                        <div class="space-y-3">
+                            <h6 class="font-label-caps text-white text-xs font-bold uppercase tracking-widest">Contact</h6>
+                            <div class="space-y-2">
+                                <p class="text-surface-variant opacity-80 text-xs md:text-sm leading-relaxed">225-226, Silver Trade Center,
+                                    Uttran, Surat - 394101</p>
+                                <p class="text-logi-vibrant-highlight font-bold text-sm md:text-base">+91 98244 79555</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+                        <p class="text-surface-variant opacity-60 text-xs uppercase tracking-widest">© 2026 Logibrisk. Precision
+                            at Scale. All rights reserved.</p>
+                        <p class="text-surface-variant opacity-60 text-xs uppercase tracking-widest">Powered by VIZTECH SOFT
+                            SOLUTIONS PVT. LTD.</p>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        // FAQ Accordion
+        function toggleFaq(item) {
+            const wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            // Toggle clicked
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        // Contact Form Submit Feedback
+        const cpForm = document.getElementById('contact-page-form');
+        if (cpForm) {
+            cpForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('cp-submit-btn');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span> Message Sent!';
+                btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                    cpForm.reset();
+                }, 3000);
+            });
+        }
+
+        // Shimmer text animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shimmer {
+                0% { background-position: 200% center; }
+                100% { background-position: -200% center; }
+            }
+            .animate-shimmer {
+                animation: shimmer 4s linear infinite;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
